@@ -1,0 +1,15 @@
+rails new demo_app
+
+bundle install
+
+rails s (to test)
+
+rails generate scaffold  User name:string email:string
+
+rails generate scaffold  Micropost message:string user_id:integer
+
+***model
+	belongs_to :user
+	has_many :microposts
+
+
