@@ -12,4 +12,7 @@ rails generate scaffold  Micropost message:string user_id:integer
 	belongs_to :user
 	has_many :microposts
 
+***view
+
+
 

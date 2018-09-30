@@ -1,0 +1,52 @@
+Mvc has 8 steps.
+
+1.	rails generate controller StaticPages home help
+	controller chú ý viết bằng số nhiều
+	cf
+
+2.	Trong routes.rb có tác dụng filter và
+	# gọi hàm
+	root, get là filter.
+	get '/', to: 'static_pages#home' giống với root 'static_pages#home'
+
+3.	layouts/aplication.html.erb
+	yield sẽ được gọi từ các hàm từ controller view gửi vào.
+
+4.	tấn công scrf, vd viết 1 bài báo cho admin duyệt.
+	admin duyệt, click vào link, thế là thực thi lệnh dưới quyền admin, có thể đổi pass 	admin, thế là mất mọi thứ :))
+	==> tấn công chiếm quyền điều khiển admin
+
+5.	file manifest: application.js, applicantion.scss
+	thư viện ở gemfile 
+	"= require_tree ." sẽ include tất cả file trong thư mục
+	js điều khiển chức năng nên chức năng ta viết được xếp cao hơn, nên require_tree để cuối
+	còn css thì ngược lại
+
+6.	helper dùng được ở view và controller, phòng khi ng lập trình quên 1 cái gì đó, vd title
+
+7.BTVN	có header footer,
+
+8. Thêm bootsrap
+
+9. assets
+	có ảnh, css, js
+	app là cái ta code
+	lib là công ty làm
+	vendor là mua của third party, vứt license bản quyền vào đây
+
+10. Http request:
+	header: content, url, cookie,...
+	parameter: GET Query String
+ 		POST Form Data
+	VD: gửi file load file, password phải dùng POST
+		
+11. CDN??
+	VD: Service S3 của Amazone => lưu trữ assets => load nhanh
+	server mới chỉ cần vào link đấy
+
+12. Sass:
+	hỗ trợ netting, giống OOP hơn
+	hỗ trợ khai báo biến $
+
+13. link_to
+	<%= link_to "name name any name", about %>
